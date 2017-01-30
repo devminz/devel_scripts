@@ -3,12 +3,11 @@ import sys
 import subprocess
 import os
 import shlex 
-import config
 
 
-
+gitignore_repo="/tmp/gitignore"
 filenames = set()
-for root, dirs, files in os.walk(config.gitignore_repo):
+for root, dirs, files in os.walk(gitignore_repo):
     for file in files:
         for pat in sys.argv:
             if pat in file and '.gitignore' in file:
